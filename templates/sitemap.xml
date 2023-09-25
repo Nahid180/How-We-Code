@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+  <loc>https://howwecode.com</loc>
+  <lastmod>2019-02-04</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>1</priority>
+</url>
+{% for i in post %}
+<url>
+  <loc>https://howwecode.com/article/{{db2.child('posts').child(i).get().val()['id']}}/{{db2.child('posts').child(i).get().val()['title'].replace(' ','-')}}</loc>
+  <lastmod>{{db2.child('posts').child(i).get().val()['date_posted']}}</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+{% endfor %}
+</urlset>

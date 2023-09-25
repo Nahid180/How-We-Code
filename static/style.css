@@ -1,0 +1,55 @@
+body{
+    font-family: calibri;
+}
+p{
+    font-size: 15pt;
+    color: black;
+}
+ul{
+    font-size:15pt;
+}
+
+ol{
+    font-size: 15pt;
+}
+
+img {
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+.article {
+    margin: auto;
+    width: 85%;
+    color: black;
+}
+.ex {
+    max-width: 60%;
+}
+video{
+    max-width: 60%;
+}
+
+
+@media screen and (max-width: 767px) {
+    .article {
+        width: 95%;
+    }
+    .ex {
+        max-width: 95%;
+    }
+    video{
+        max-width: 95%;
+    }
+}

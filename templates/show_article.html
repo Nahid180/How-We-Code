@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content='{{tag}}'>
+    <meta name="description" content="{{desc}}...">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="/static/home/css/style.css">
+    <link rel="stylesheet" href="/static/favicons/icons.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/prism.css">
+    <script src="https://kit.fontawesome.com/a0c189cd7f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" href="/static/favicons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/static/favicons/site.webmanifest">
+    <script async src="https://cse.google.com/cse.js?cx=7cb8067952f0d105e"></script>
+
+    <title>{{db.child("posts").child(count).get().val()['title']}} - How We Code</title>
+</head>
+
+<body class="line-numbers" style="color: black;">
+
+    <style>
+        .gsc-control-cse {
+            border: 0 !important;
+            background-color: transparent;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        form.gsc-search-box,
+        table.gsc-search-box {
+            margin-bottom: 0;
+            border: 0;
+            padding: 2pt;
+
+        }
+
+        .gsc-search-button-v2,
+        .gsc-search-button-v2:hover,
+        .gsc-search-button-v2:focus {
+
+            padding: 7.5px;
+            width: 48px;
+            border-radius: 3pt;
+            height: 34px;
+        }
+
+        .gsc-search-button-v2:hover {
+            background-color: #3079ED;
+            transition: .5s;
+        }
+
+        .gsc-input-box {
+            border: solid 1px #ced4da;
+            border-radius: 3pt;
+            margin-right: 2px;
+            padding: 1pt;
+        }
+    </style>
+
+    <nav class="navbar py-3 navbar-expand-md navbar-light fixed-top bg-light shadow-lg">
+        <div class="container-fluid">
+            <a style="color:dodgerblue;" class="navbar-brand" href="/">How We Code</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="subscribe" aria-current="page" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" href="">Subscribe</a>
+                    </li>
+                </ul>
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-success alert-dismissible fade show fixed-top" id="success" role="alert"
+        style="display: none; margin-top: 75px;">
+        <strong>Thanks for subscribing!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="alert fixed-top alert-danger alert-dismissible fade show" id="failed" role="alert"
+        style="display: none; margin-top: 75px;">
+        <strong>Sorry! something went wrong</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Subscribe To Our Newsletter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/subscribe" method="post">
+                        <div class="mb-3">
+                            <input type="hidden" name="url" id="url">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" name="sub-email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" name="button" class="btn btn-primary" value="Subscribe">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--1000x1500-->
+    <div class="article" style="margin-top: 90px;">
+        {{warn}}
+        <img src="{{url}}" class="img-fluid shadow-lg mb-5 bg-body rounded" alt="..."><br><br>
+        <h1>{{db.child("posts").child(count).get().val()['title']}}</h1><br><br>
+
+        <p style="color: black;">
+            {{db.child("posts").child(count).get().val()['content'] | safe}}
+        </p>
+
+    </div><br><br>
+
+    <style>
+        .card {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        pre[class*="language-"]:before,
+        pre[class*="language-"]:after {
+            display: none;
+        }
+
+        @media screen and (max-width: 767px) {
+            .container {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <h2 style="text-align: center;">More Articles</h2><br><br>
+
+    <div class="card-group">
+        {% for i in post %}
+            <div class="card shadow-lg bg-body rounded">
+                <a style="color: black;" href="/article/{{db.child('posts').child(i).get().val()['id']}}/{{db.child('posts').child(i).get().val()['title'].replace(' ','-')}}">
+                <img src="{{db.child('posts').child(i).get().val()['banner']}}" class="card-img-top mt-0" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{db.child("posts").child(i).get().val()['title']}}</h5>
+                </div>
+                </a>
+            </div>
+        {% endfor%}
+    </div>
+    <style>
+        .nav-link {
+            color: white;
+        }
+    </style>
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a class="nav-link px-2 fab fa-facebook"
+                        href="https://www.facebook.com/howwecode"></a></li>
+                <li class="nav-item"><a href="https://www.instagram.com/nahidkhan01764/"
+                        class="nav-link px-2 fab fa-instagram"></a></li>
+                <li class="nav-item"><a href="https://github.com/Nahid180" class="nav-link px-2 fab fa-github"></a></li>
+                <li class="nav-item"><a href="https://twitter.com/howwecode" class="nav-link px-2 fab fa-twitter"></a></li>
+                <li class="nav-item"><a href="mailto:howwecode001@gmail.com" class="nav-link px-2 fab fa-google"></a>
+                </li>
+            </ul>
+            <p class="text-center text-muted">© Copyright How We Code <span id="year"></span></p>
+        </footer>
+    </div>
+    <script>
+        setTimeout(function(){ 
+			document.getElementById('subscribe').click();
+		}, 20000);
+        function getSearchParameters() {
+            var prmstr = window.location.search.substr(1);
+            return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+        }
+
+        function transformToAssocArray(prmstr) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for (var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+
+
+        var params = getSearchParameters().result;
+        var url = window.location.href.split('?')[0];
+        document.getElementById("url").value = url;
+        if (params == "success") {
+            document.getElementById("success").style.display = "block";
+        }
+        else if (params == "failed") {
+            document.getElementById("failed").style.display = "block";
+        }
+        else {
+            null
+        }
+
+    </script>
+
+    <script src="/static/home/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById('gsc-i-id1').placeholder = 'Search...';
+        };
+    </script>
+</body>
+
+</html>

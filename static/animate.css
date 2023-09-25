@@ -1,0 +1,24 @@
+@font-face {
+    font-family:helvetica ;
+    src: url('/static/helvetica-rounded.otf');
+}
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.typewrite{
+    font-family: helvetica;
+    font-weight:600 ;
+    font-size: 6vw;
+    color: white;
+}
+/*body {
+    background-color:#ce3635;
+    text-align: center;
+    color:#fff;
+    padding-top:10em;
+  }
+  
+  * { color:#fff; text-decoration: none;}*/
