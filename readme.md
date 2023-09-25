@@ -1,6 +1,7 @@
 ﻿## How We Code
-Implementation of a blogging app made with Flask.
-Hosting platform: [Python Anywhere](https://www.pythonanywhere.com/)
+Implementation of a blogging app made with Flask. <br>
+Hosting platform: [Python Anywhere](https://www.pythonanywhere.com/) <br>
+Database used : [Firebase](https://firebase.google.com/)
 #### Try out: http://nahid180.pythonanywhere.com/
 
 ![enter image description here](https://lh3.googleusercontent.com/pw/ADCreHeUZClUPSJbg-PNN7VoJmL32u38AVZ1EoeS1Uatcjzy3axCXh9dtOTB09CSSIFxTluZYHGlbyfSyuYbYPINy4PQoa2XXADFumPrQnSZaD0kpC_S6iLJBSAnVUTzBM71nEkfqVQzfeWqHQaTmPY1cE2YpTRgioutiClKKNNHG31h9vDDuu9al2-wiHLZH3hlHZV-W2GAKAxHxRE3n9_DJ6RATVB4k794Pmavxpu5U5JxYNJ3Br-0PDpj4hd-TWoVtMGlrt9Lab_TIEZBdywShNIVW2kAh7fTJocklmn0GtQ627hZ6b8A7DzHvhBjSVAIPlsNoZDW1V4aJCdyli5bWH7VVKfGyhn8RgUnJm0PoCx99K-opn_Z4vvCghIJc9Xsp60nULA1BCTitxOodlRSjmHHbwNrJ_YwEt5F49tbYFq_Y3VwrJGHJeXgZSLCPol5SovO_toy3zyXgqCpulGAxa4P1i0g5xi3ClXCDv_iwXEnXEHWcwXIMyTWXeLEZ73uHy-vKR_2KBcLtmTeP-k147SzyFzl8Ku7qpBNUT8yhS3H7x9zA6SxTPwHUhpZsbNwaJqvLY3K4_vX-neaSh-4jhkHRUpu5FTc_HOZTb86cfpymOSubdV6se2VVzuVboGRz8l7bq4rlebTNAEpenoGvykqDZvsePhOzmV1zAELYQjU3mPjNx2SN2LFFP6Gx9YZ9xMZLlweHkm0Mik7ayTqASwouaifGXQDq5SS9NLtkzYP9XvTkSlYrFLmgybIF6dhPgffQIJaSj4Yvf_H-DPIuZ_OJhclx9wotk56qhnJW3f8bQ_rXI3UzYFSVvuBNT9-xORQ3IuG7TBorUUVnQVXZ0PO20BUwbMe2knzR1bvmBqxZxTjDlizfDLB1-9fNEbUYCjbupfabai0_jov7OvEzA=w1354-h669-s-no)
